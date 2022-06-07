@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "28a877b7-0f81-4f51-8a59-832251d65ca7",
+		"name": "Api Enlaces WEb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20583095"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "registra usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tetete@demo.com\",\r\n    \"password\":\"1234\",\r\n    \"name\": \"Andres\",\r\n    \"surname\":\"ferrandiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener info usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/user/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tetete@demo.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enlaces",
+			"item": [
+				{
+					"name": "ver un solo enlace",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0MTYyNTA4LCJleHAiOjE2NTY3NTQ1MDh9.dME5ifLA22wSPpDroWwTjGsX6_QL8oSyXvKE1CnnMuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/enlace/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"enlace",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar enlace",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0MTYyNTA4LCJleHAiOjE2NTY3NTQ1MDh9.dME5ifLA22wSPpDroWwTjGsX6_QL8oSyXvKE1CnnMuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/enlace/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"enlace",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver lista de enlaces",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0MTYyNTA4LCJleHAiOjE2NTY3NTQ1MDh9.dME5ifLA22wSPpDroWwTjGsX6_QL8oSyXvKE1CnnMuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000",
+							"host": [
+								"localhost"
+							],
+							"port": "4000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear enlace",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0NTkyNjE4LCJleHAiOjE2NTcxODQ2MTh9.Pb04RCRLKGRUgeDIMO2PNeH01K9EV0g-eYA7uh5VTxw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\" es la mejor\",\r\n    \"title\":\"ever\",\r\n    \"url\":\"http://goo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000",
+							"host": [
+								"localhost"
+							],
+							"port": "4000"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "votos",
+			"item": [
+				{
+					"name": "borrar voto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0MTYyNTA4LCJleHAiOjE2NTY3NTQ1MDh9.dME5ifLA22wSPpDroWwTjGsX6_QL8oSyXvKE1CnnMuw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/votos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"votos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "votar enalce",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU0NTkyNjE4LCJleHAiOjE2NTcxODQ2MTh9.Pb04RCRLKGRUgeDIMO2PNeH01K9EV0g-eYA7uh5VTxw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/votos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"votos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
