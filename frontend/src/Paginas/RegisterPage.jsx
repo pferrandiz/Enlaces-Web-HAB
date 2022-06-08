@@ -7,6 +7,8 @@ export const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
   const [error, setError] = useState("");
 
   const handleForm = async (e) => {
@@ -29,6 +31,28 @@ export const RegisterPage = () => {
       <h1>Registro</h1>
       <form onSubmit={handleForm}>
         <fieldset>
+          <label htmlFor="name">Nombre</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            value={name}
+            required
+            onChange={(e) => setName(e.target.value)}
+          />
+        </fieldset>
+        <fieldset>
+          <label htmlFor="surname">Apellido</label>
+          <input
+            type="surname"
+            id="surname"
+            name="surname"
+            value={surname}
+            required
+            onChange={(e) => setSurname(e.target.value)}
+          />
+        </fieldset>
+        <fieldset>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -40,7 +64,7 @@ export const RegisterPage = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="password1">Password</label>
+          <label htmlFor="password1">Contraseña</label>
           <input
             type="password"
             id="password1"
@@ -51,7 +75,7 @@ export const RegisterPage = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="password2">Repeat password</label>
+          <label htmlFor="password2">Repite Contraseña</label>
           <input
             type="password"
             id="passswor2"
@@ -61,7 +85,7 @@ export const RegisterPage = () => {
             onChange={(e) => setPassword2(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button>Registrar</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

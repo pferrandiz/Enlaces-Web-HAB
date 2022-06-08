@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUserService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
@@ -7,7 +7,7 @@ export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { login } = AuthContext();
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleForm = async (e) => {
