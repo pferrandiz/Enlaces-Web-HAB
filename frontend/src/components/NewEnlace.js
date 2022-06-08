@@ -1,4 +1,7 @@
+import { useState } from "react/cjs/react.production.min";
+
 export const NewEnlace = () => {
+  const [error, setError] = useState("");
   return (
     <form>
       <h1>Publica nuevo Enlace</h1>
@@ -19,6 +22,7 @@ export const NewEnlace = () => {
         <input type="file" id="image" name="image" />
       </fieldset>
       <button>Publicar Enlace</button>
+      {error ? <p>{error}</p> : null}
     </form>
   );
 };
