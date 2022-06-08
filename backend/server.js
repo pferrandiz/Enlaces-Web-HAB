@@ -56,8 +56,6 @@ app.use((req, res) => {
 
 //Middleware de gestion de errores
 app.use((error, req, res, next) => {
-  console.error(error);
-
   res.status(error.httpStatus_ || 500).send({
     status: "error",
     message: error.message,

@@ -50,7 +50,7 @@ const getUserbyId = async (id) => {
 
 const createUser = async (email, password, name, surname) => {
   let connection;
-  console.log(email, password, name, surname);
+
   try {
     connection = await getConnection();
     // Comprobacion de no repeticion de usuario
@@ -73,7 +73,7 @@ const createUser = async (email, password, name, surname) => {
       [email, passwordHash, name, surname]
     );
     // Devolver ID
-    console.log(newUser);
+
     return newUser.insertId;
   } finally {
     if (connection) connection.release();
