@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getAllEnlacesService from "../comunicaciones";
+import { getAllEnlacesService } from "../comunicaciones";
 
 const useEnlaces = () => {
   const [enlace, setEnlaces] = useState([]);

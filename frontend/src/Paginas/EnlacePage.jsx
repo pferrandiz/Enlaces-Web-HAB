@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useEnlace from "../hooks/useEnlace";
 import Enlace from "../components/Enlace";
 
-const EnlacePage = () => {
+export const EnlacePage = () => {
   const { id } = useParams();
   const { enlace, loading, error } = useEnlace(id);
   if (loading) return <p>Cargando enlace ......</p>;
@@ -15,5 +15,3 @@ const EnlacePage = () => {
     </section>
   );
 };
-
-export default EnlacePage;

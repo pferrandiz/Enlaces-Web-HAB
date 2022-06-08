@@ -1,7 +1,7 @@
 import { ListEnlaces } from "../components/ListEnlaces";
 import useEnlaces from "../hooks/useEnlaces";
 
-const HomePage = () => {
+export const HomePage = () => {
   const { enlaces, loading, error } = useEnlaces();
   if (loading) return <p>Cargando enlace ......</p>;
   if (error) return <p>{error}</p>;
@@ -13,5 +13,3 @@ const HomePage = () => {
     </section>
   );
 };
-
-export default HomePage;

@@ -1,10 +1,9 @@
-import useEnlaces from "../hooks/useEnlaces";
 import Enlaces from "./Enlace";
 
-export const ListEnlaces = ({ enlace }) => {
+export const ListEnlaces = ({ enlaces }) => {
   return Enlaces.length ? (
     <ul>
-      {enlace.map((enlace) => (
+      {enlaces.map((enlace) => (
         <li key={enlace.id}>
           <enlace enlace={enlace} />
         </li>

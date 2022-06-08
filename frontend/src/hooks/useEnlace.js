@@ -7,7 +7,7 @@ const useEnlace = (id) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const loadEnlaces = async () => {
+    const loadEnlace = async () => {
       try {
         setLoading(true);
         const data = await getSingleEnlaceService(id);
@@ -18,7 +18,7 @@ const useEnlace = (id) => {
         setLoading(false);
       }
     };
-    loadEnlaces();
+    loadEnlace();
   }, [id]);
   return { enlace, error, loading };
 };

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   return (
     <section>
       <h1>Not Found</h1>
@@ -7,5 +7,3 @@ const NotFoundPage = () => {
     </section>
   );
 };
-
-export default NotFoundPage;

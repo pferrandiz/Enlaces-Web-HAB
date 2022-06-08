@@ -1,8 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-const Auth = () => {
-  const { logout, user } = AuthContext();
+export const Auth = () => {
+  const { logout, user } = useContext(AuthContext);
   return user ? (
     <p>
       {user.email} <button onClick={() => logout()}>LogOut</button>
@@ -18,5 +19,3 @@ const Auth = () => {
     </ul>
   );
 };
-
-export default Auth;

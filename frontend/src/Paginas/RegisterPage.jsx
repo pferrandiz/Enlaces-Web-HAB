@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUserService } from "../comunicaciones";
 
-const RegisterPage = () => {
+export const RegisterPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
@@ -67,5 +67,3 @@ const RegisterPage = () => {
     </section>
   );
 };
-
-export default RegisterPage;

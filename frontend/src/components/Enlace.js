@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Enlace = ({ enlace }) => {
+const Enlace = ({ enlace }) => {
   return (
     <article>
       <p>{enlace.url}</p>

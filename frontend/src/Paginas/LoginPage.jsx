@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUserService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -54,5 +54,3 @@ const LoginPage = () => {
     </section>
   );
 };
-
-export default LoginPage;

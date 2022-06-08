@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import { getMyDataService } from "../comunicaciones";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
-export const AuthProviderComponent = ({ children }) => {
+export const AuthContextProviderComponent = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null);
 
@@ -25,13 +25,12 @@ export const AuthProviderComponent = ({ children }) => {
     if (token) getUserData();
   }, [token, setToken]);
 
-  const login = (token) => {
-    setToken(token);
-  };
-
   const logout = () => {
     setToken("");
     setUser(null);
+  };
+  const login = (token) => {
+    setToken(token);
   };
 
   return (
@@ -40,4 +39,3 @@ export const AuthProviderComponent = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-export default AuthContext;

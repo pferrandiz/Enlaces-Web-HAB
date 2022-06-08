@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
-import HomePage from "./Paginas/HomePage";
-import RegisterPage from "./Paginas/RegisterPage";
-import LoginPage from "./Paginas/LoginPage";
-import EnlacePage from "./Paginas/EnlacePage";
-import NotFoundPage from "./Paginas/NotFoundPage";
+import { HomePage } from "./Paginas/HomePage";
+import { RegisterPage } from "./Paginas/RegisterPage";
+import { LoginPage } from "./Paginas/LoginPage";
+import { EnlacePage } from "./Paginas/EnlacePage";
+import { NotFoundPage } from "./Paginas/NotFoundPage";
 
 function App() {
   return (
