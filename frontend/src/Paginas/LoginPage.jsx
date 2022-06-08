@@ -12,10 +12,10 @@ export const LoginPage = () => {
 
   const handleForm = async (e) => {
     e.preventDefault();
-    setError("");
+
     try {
-      const data = await loginUserService({ email, password });
-      login(data);
+      const token = await loginUserService({ email, password });
+      login(token);
       navigate("/");
     } catch (error) {
       setError(error.message);

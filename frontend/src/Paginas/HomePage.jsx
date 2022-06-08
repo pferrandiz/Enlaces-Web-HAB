@@ -2,7 +2,7 @@ import { ListEnlaces } from "../components/ListEnlaces";
 import useEnlaces from "../hooks/useEnlaces";
 
 export const HomePage = () => {
-  const { enlaces, loading, error } = useEnlaces();
+  const { enlaces, error, loading } = useEnlaces();
   if (loading) return <p>Cargando enlace ......</p>;
   if (error) return <p>{error}</p>;
 

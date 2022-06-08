@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const Auth = () => {
-  const { logout, user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   return user ? (
     <p>
       {user.email} <button onClick={() => logout()}>LogOut</button>
