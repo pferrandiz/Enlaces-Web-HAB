@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { sendEnlaceService } from "../comunicaciones";
 
 export const NewEnlace = () => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
+  const { token } = useContext(AuthContext);
 
   const handleForm = async (e) => {
     e.preventDefault();
 
     try {
       setSending(true);
+
+      const data = new FormData(e.target);
+      const enlace = await sendEnlaceService({ data, token });
+
+      console.log(enlace);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -32,7 +40,7 @@ export const NewEnlace = () => {
         <input type="text" id="text" name="text" />
       </fieldset>
       <fieldset>
-        <label htmlFor="image">Título</label>
+        <label htmlFor="image">Imagen</label>
         <input type="file" id="image" name="image" />
       </fieldset>
       <button>Publicar Enlace</button>
