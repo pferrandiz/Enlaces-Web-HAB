@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.production.min";
+import { useState } from "react";
 
 export const NewEnlace = () => {
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ export const NewEnlace = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleForm}>
       <h1>Publica nuevo Enlace</h1>
       <fieldset>
         <label htmlFor="title">Título</label>
