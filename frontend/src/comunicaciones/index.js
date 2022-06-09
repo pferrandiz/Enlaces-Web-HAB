@@ -18,20 +18,20 @@ export const getSingleEnlaceService = async (id) => {
   }
   return json.data;
 };
-export default getAllEnlacesService;
 
 export const registerUserService = async ({
-  email,
-  password,
   name,
   surname,
+  email,
+  password,
 }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
     method: "POST",
-    body: JSON.stringify({ email, password, name, surname }),
+
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({ name, surname, email, password }),
   });
 
   const json = await response.json();

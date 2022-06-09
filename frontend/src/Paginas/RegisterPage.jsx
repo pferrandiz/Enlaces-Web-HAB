@@ -4,12 +4,12 @@ import { registerUserService } from "../comunicaciones";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState("Este email ya existe");
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export const RegisterPage = () => {
       return;
     }
     try {
-      await registerUserService({ email, password: password1, name, surname });
+      await registerUserService({ name, surname, email, password: password1 });
       navigate("/login");
     } catch (error) {
       setError(error.mesage);

@@ -24,7 +24,7 @@ const useEnlaces = () => {
     setEnlaces([enlace, ...enlaces]);
   };
   const removeEnlace = (id) => {
-    setEnlaces(enlace.filter((enlace) => enlace.id !== id));
+    setEnlaces(enlaces.filter((enlace) => enlace.id !== id));
   };
 
   return { enlaces, loading, error, addEnlace, removeEnlace };
