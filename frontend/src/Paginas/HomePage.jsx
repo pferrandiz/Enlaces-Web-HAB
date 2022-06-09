@@ -9,14 +9,19 @@ export const HomePage = () => {
   const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
 
-  if (loading) return <p>Cargando enlace ......</p>;
-  if (error) return <ErrorMessage message={{ error }} />;
-
   return (
     <section>
-      {user ? <NewEnlace addEnlace={addEnlace} /> : null}
-      <h1>Nuevos Enlaces</h1>
-      <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+      {loading ? (
+        <p>Cargando enlace ......</p>
+      ) : (
+        <>
+          {error && <ErrorMessage message={error} />}
+          {user && <NewEnlace addEnlace={addEnlace} />}
+
+          <h1>Nuevos Enlaces</h1>
+          <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+        </>
+      )}
     </section>
   );
 };
