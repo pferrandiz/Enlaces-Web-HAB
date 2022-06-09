@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllEnlacesService } from "../comunicaciones";
 
 const useEnlaces = () => {
-  const [enlace, setEnlaces] = useState([]);
+  const [enlaces, setEnlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -20,8 +20,11 @@ const useEnlaces = () => {
     };
     loadEnlaces();
   }, []);
+  const addEnlace = (enlace) => {
+    setEnlaces([enlace, ...enlaces]);
+  };
 
-  return { enlace, loading, error };
+  return { enlaces, loading, error, addEnlace };
 };
 
 export default useEnlaces;
