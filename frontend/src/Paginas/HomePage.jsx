@@ -1,11 +1,12 @@
-import { useContext } from "react/cjs/react.production.min";
+import { useContext } from "react";
 import { ErrorMessage } from "../components/ErrorMessage";
+import { NewEnlace } from "../components/NewEnlace";
 import { ListEnlaces } from "../components/ListEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
 
 export const HomePage = () => {
-  const { enlaces, loading, error, removeEnlace } = useEnlaces();
+  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
   if (loading) return <p>Cargando enlace ......</p>;
   if (error) return <ErrorMessage message={{ error }} />;

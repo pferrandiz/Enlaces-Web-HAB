@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.production.min";
-import { useContext } from "react/cjs/react.production.min";
+import { useState } from "react";
+import { useContext } from "react";
 import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 

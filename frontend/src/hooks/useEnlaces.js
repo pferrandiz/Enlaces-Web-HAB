@@ -20,8 +20,8 @@ const useEnlaces = () => {
     };
     loadEnlaces();
   }, []);
-  const addEnlace = (enlace) => {
-    setEnlaces([enlace, ...enlaces]);
+  const addEnlace = (data) => {
+    setEnlaces([data, ...enlaces]);
   };
   const removeEnlace = (id) => {
     setEnlaces(enlaces.filter((enlace) => enlace.id !== id));
