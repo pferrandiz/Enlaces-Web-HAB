@@ -23,8 +23,11 @@ const useEnlaces = () => {
   const addEnlace = (enlace) => {
     setEnlaces([enlace, ...enlaces]);
   };
+  const removeEnlace = (id) => {
+    setEnlaces(enlace.filter((enlace) => enlace.id !== id));
+  };
 
-  return { enlaces, loading, error, addEnlace };
+  return { enlaces, loading, error, addEnlace, removeEnlace };
 };
 
 export default useEnlaces;
