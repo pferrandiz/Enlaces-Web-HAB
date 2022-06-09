@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getMyDataService } from "../comunicaciones";
+import { getMyUserDataService } from "../comunicaciones";
 
 export const AuthContext = createContext(null);
 
@@ -14,7 +14,7 @@ export const AuthContextProviderComponent = ({ children }) => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const data = await getMyDataService({ token });
+        const data = await getMyUserDataService({ token });
 
         setUser(data);
       } catch (error) {

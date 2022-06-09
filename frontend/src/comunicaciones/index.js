@@ -59,7 +59,7 @@ export const loginUserService = async ({ email, password }) => {
   return json.data;
 };
 
-export const getMyDataService = async ({ token }) => {
+export const getMyUserDataService = async ({ token }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
     headers: {
       Authorization: token,
@@ -90,6 +90,7 @@ export const sendEnlaceService = async ({ data, token }) => {
 
   return json.data;
 };
+
 export const deleteEnlaceService = async ({ id, token }) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/enlace/${id}`,

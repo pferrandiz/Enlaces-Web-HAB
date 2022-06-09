@@ -8,6 +8,7 @@ import useEnlaces from "../hooks/useEnlaces";
 export const HomePage = () => {
   const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
+
   if (loading) return <p>Cargando enlace ......</p>;
   if (error) return <ErrorMessage message={{ error }} />;
 
