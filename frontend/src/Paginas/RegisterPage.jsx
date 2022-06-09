@@ -19,7 +19,7 @@ export const RegisterPage = () => {
       return;
     }
     try {
-      await registerUserService({ email, password: password1 });
+      await registerUserService({ email, password: password1, name, surname });
       navigate("/login");
     } catch (error) {
       setError(error.mesage);
