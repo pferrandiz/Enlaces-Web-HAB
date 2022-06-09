@@ -1,5 +1,39 @@
 * {
-  margin: 10px;
-  padding: 10px;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
+}
+
+html {
+  --cp: #ffc017;
+}
+/*main.app {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto 1fr auto;
+
+  font-family: sans-serif;
+}*/
+header {
+  background-color: var(--cp);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+footer {
+  background-color: var(--cp);
+  padding: 1rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--cp);
+  border: ;
 }
