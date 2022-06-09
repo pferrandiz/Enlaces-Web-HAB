@@ -3,6 +3,19 @@ import { useState } from "react/cjs/react.production.min";
 export const NewEnlace = () => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
+
+  const handleForm = async (e) => {
+    e.preventDefault();
+
+    try {
+      setSending(true);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <form>
       <h1>Publica nuevo Enlace</h1>
