@@ -5,7 +5,7 @@ import { useContext } from "react/cjs/react.production.min";
 import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 
-const Enlace = ({ enlace, removeEnlace }) => {
+export const Enlace = ({ enlace, removeEnlace }) => {
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate("");
@@ -47,5 +47,3 @@ const Enlace = ({ enlace, removeEnlace }) => {
     </article>
   );
 };
-
-export default Enlace;

@@ -1,4 +1,5 @@
 import { useContext } from "react/cjs/react.production.min";
+import { ErrorMessage } from "../components/ErrorMessage";
 import { ListEnlaces } from "../components/ListEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
@@ -7,7 +8,7 @@ export const HomePage = () => {
   const { enlaces, loading, error, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
   if (loading) return <p>Cargando enlace ......</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <ErrorMessage message={{ error }} />;
 
   return (
     <section>
