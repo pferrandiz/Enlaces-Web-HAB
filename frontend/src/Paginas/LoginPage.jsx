@@ -23,7 +23,7 @@ export const LoginPage = () => {
   };
   return (
     <section>
-      <h1>Login</h1>
+      <h1>Iniciar Sesión</h1>
       <form onSubmit={handleForm}>
         <fieldset>
           <label htmlFor="email">Email</label>
@@ -37,7 +37,7 @@ export const LoginPage = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Contraseña</label>
           <input
             type="password"
             name="password"
@@ -48,7 +48,7 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <button>Login</button>
+        <button>Iniciar Sesión</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

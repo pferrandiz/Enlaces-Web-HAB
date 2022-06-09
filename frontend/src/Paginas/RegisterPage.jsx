@@ -85,7 +85,7 @@ export const RegisterPage = () => {
             onChange={(e) => setPassword2(e.target.value)}
           />
         </fieldset>
-        <button>Registrar</button>
+        <button>Registrarse</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

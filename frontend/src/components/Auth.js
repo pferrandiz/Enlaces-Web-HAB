@@ -6,15 +6,15 @@ export const Auth = () => {
   const { user, logout } = useContext(AuthContext);
   return user ? (
     <p>
-      {user.email} <button onClick={() => logout()}>LogOut</button>
+      {user.email} <button onClick={() => logout()}>Cerrar Sesión</button>
     </p>
   ) : (
     <ul>
       <li>
-        <Link to={"/register"}>Register</Link>
+        <Link to={"/register"}>Registrarse</Link>
       </li>
       <li>
-        <Link to={"/login"}>Login</Link>
+        <Link to={"/login"}>Iniciar Sesión</Link>
       </li>
     </ul>
   );
