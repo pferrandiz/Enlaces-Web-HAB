@@ -44,10 +44,11 @@ export const registerUserService = async ({
 export const loginUserService = async ({ email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/login`, {
     method: "POST",
-    body: JSON.stringify({ email, password }),
+
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({ email, password }),
   });
 
   const json = await response.json();
