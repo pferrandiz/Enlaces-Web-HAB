@@ -34,8 +34,12 @@ footer {
   height: 40px;
   color: black;
 }
+
 button {
-  padding: 0.5rem 1rem;
+  border: 1.7px solid #000000;
+  padding: 12px;
   background-color: var(--cp);
-  border: none;
+  color: #040404;
+  text-transform: uppercase;
+  border-radius: 10px;
 }
