@@ -15,7 +15,7 @@ export const UserPage = () => {
       <section class="user-data">
         <p>User id: {user.email}</p>
       </section>
-      <UserTweets id={user.id} />
+      id={user.id}
     </section>
   );
 };
