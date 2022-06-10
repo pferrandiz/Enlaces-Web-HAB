@@ -9,6 +9,7 @@ import { RegisterPage } from "./Paginas/RegisterPage";
 import { LoginPage } from "./Paginas/LoginPage";
 import { EnlacePage } from "./Paginas/EnlacePage";
 import { NotFoundPage } from "./Paginas/NotFoundPage";
+import { UserPage } from "./Paginas/UserPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/enlace/:id" element={<EnlacePage />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/user/:id" element={<UserPage />} />
         </Routes>
         <Footer />
       </main>

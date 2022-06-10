@@ -32,7 +32,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
       <p>{enlace.text}</p>
       <p>
-        By {enlace.email} on{""}
+        By <Link to={`/user/${enlace.user.id}`}> {enlace.email}</Link> on{""}
         <Link to={`/enlace/${enlace.id}`}>
           {new Date(enlace.created_at).toLocaleString()}
         </Link>
