@@ -8,6 +8,7 @@ const cors = require("cors");
 const {
   newUserController,
   getUserController,
+  getMyUserController,
   loginController,
 } = require("./controllers/users");
 
@@ -33,6 +34,7 @@ const { authUser } = require("./middlewares/auth");
 //Rutas de los usuarios
 
 app.post("/user", newUserController);
+app.get("/user", authUser, getMyUserController);
 app.get("/user/:id", getUserController);
 app.post("/login", loginController);
 

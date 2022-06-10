@@ -1,12 +1,16 @@
-export const getAllEnlacesService = async () => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}`);
+export const getAllEnlacesService = async (token) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}`, {
+    headers: {
+      Authorization: token,
+    },
+  });
 
   const json = await response.json();
 
   if (!response.ok) {
     throw new Error(json.message);
   }
-  return json.data;
+  return json;
 };
 
 export const getSingleEnlaceService = async (id) => {
@@ -56,7 +60,7 @@ export const loginUserService = async ({ email, password }) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-  return json.data;
+  return json.token;
 };
 
 export const getMyUserDataService = async ({ token }) => {
@@ -74,7 +78,7 @@ export const getMyUserDataService = async ({ token }) => {
   return json.data;
 };
 
-export const getUserDataService = async (id) => {
+export const getUserEnlacesService = async (id) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/${id}`);
 
   const json = await response.json();

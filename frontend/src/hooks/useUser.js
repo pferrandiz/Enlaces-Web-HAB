@@ -6,19 +6,19 @@ const useUser = (id) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const loadUser = async () => {
-      try {
-        setLoading(true);
-        const data = await getUserDataService(id);
-        setUser(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-  }, [id]);
+  // useEffect(() => {
+  //   const loadUser = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const data = await getUserDataService(id);
+  //       setUser(data);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  // }, [id]);
 
   return { user, loading, error };
 };

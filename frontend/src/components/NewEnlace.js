@@ -51,12 +51,15 @@ export const NewEnlace = ({ addEnlace }) => {
           accept="image/*"
           onChange={(e) => setImage(e.target.files[0])}
         />
-        {image ? <figure></figure> : null}
-        <img
-          src={URL.createObjectURL(image)}
-          style={{ width: "200px" }}
-          alt="Preview"
-        />
+        {image ? (
+          <figure>
+            <img
+              src={URL.createObjectURL(image)}
+              style={{ width: "200px" }}
+              alt="Preview"
+            />
+          </figure>
+        ) : null}
       </fieldset>
       <button>Publicar Enlace</button>
       {sending ? <p>Enviando Enlace....</p> : null};

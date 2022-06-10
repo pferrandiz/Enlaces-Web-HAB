@@ -21,6 +21,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       setError(error.message);
     }
   };
+
   return (
     <article>
       <p>{enlace.url}</p>
@@ -32,7 +33,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
       <p>{enlace.text}</p>
       <p>
-        By <Link to={`/user/${enlace.user.id}`}> {enlace.email}</Link> on{""}
+        By <Link to={`/user/${enlace.user_id}`}> {enlace.email}</Link> on{""}
         <Link to={`/enlace/${enlace.id}`}>
           {new Date(enlace.created_at).toLocaleString()}
         </Link>

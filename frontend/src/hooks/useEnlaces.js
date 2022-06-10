@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAllEnlacesService } from "../comunicaciones";
+import { AuthContext } from "../context/AuthContext";
 
 const useEnlaces = () => {
+  const { token } = useContext(AuthContext);
   const [enlaces, setEnlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -10,7 +12,7 @@ const useEnlaces = () => {
     const loadEnlaces = async () => {
       try {
         setEnlaces(true);
-        const data = await getAllEnlacesService();
+        const data = await getAllEnlacesService(token);
         setEnlaces(data);
       } catch (error) {
         setError(error.message);

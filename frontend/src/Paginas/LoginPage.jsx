@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUserService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 
@@ -50,6 +50,9 @@ export const LoginPage = () => {
 
         <button>Iniciar Sesión</button>
         {error ? <p>{error}</p> : null}
+        <p>
+          Si no tienes cuenta puedes <Link to="/register">registrarte</Link>
+        </p>
       </form>
     </section>
   );

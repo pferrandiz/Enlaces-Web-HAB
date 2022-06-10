@@ -20,6 +20,19 @@ const newUserController = async (req, res, next) => {
   }
 };
 
+const getMyUserController = async (req, res, next) => {
+  try {
+    const id = req.userId;
+    const user = await getUserbyId(id);
+    res.send({
+      status: "ok",
+      data: user,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getUserController = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -72,6 +85,7 @@ const loginController = async (req, res, next) => {
 
 module.exports = {
   newUserController,
+  getMyUserController,
   getUserController,
   loginController,
 };
