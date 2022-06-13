@@ -43,3 +43,11 @@ button {
   text-transform: uppercase;
   border-radius: 10px;
 }
+
+/*votar enlace*/
+.votaenlace .on {
+  color: #ffc017;
+}
+.votaenlace .of {
+  color: #7d7d7a;
+}
