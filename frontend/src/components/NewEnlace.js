@@ -61,7 +61,7 @@ export const NewEnlace = ({ addEnlace }) => {
           </figure>
         ) : null}
       </fieldset>
-      <button>Publicar Enlace</button>
+      <button>Publicar Enlace </button>
       {sending ? <p>Enviando Enlace....</p> : null};
       {error ? <p>{error}</p> : null}
     </form>

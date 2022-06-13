@@ -45,6 +45,46 @@ export const registerUserService = async ({
   }
 };
 
+export const getUserDataService = async (id) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/${id}`);
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const getMyDataService = async ({ token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
+    headers: {
+      Authorization: token,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getUserEnlacesService = async (id) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/user/${id}/enlaces`
+  );
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
 export const loginUserService = async ({ email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/login`, {
     method: "POST",
@@ -61,32 +101,6 @@ export const loginUserService = async ({ email, password }) => {
     throw new Error(json.message);
   }
   return json.token;
-};
-
-export const getMyUserDataService = async ({ token }) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
-    headers: {
-      Authorization: token,
-    },
-  });
-
-  const json = await response.json();
-
-  if (!response.ok) {
-    throw new Error(json.message);
-  }
-  return json.data;
-};
-
-export const getUserEnlacesService = async (id) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/${id}`);
-
-  const json = await response.json();
-
-  if (!response.ok) {
-    throw new Error(json.message);
-  }
-  return json.data;
 };
 
 export const sendEnlaceService = async ({ data, token }) => {
@@ -123,6 +137,4 @@ export const deleteEnlaceService = async ({ id, token }) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-
-  return json.data;
 };
