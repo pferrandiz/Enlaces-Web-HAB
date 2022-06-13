@@ -21,7 +21,7 @@ const useEnlaces = () => {
       }
     };
     loadEnlaces();
-  }, []);
+  }, [token]);
   const addEnlace = (data) => {
     setEnlaces([data, ...enlaces]);
   };
