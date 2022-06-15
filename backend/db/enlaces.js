@@ -43,6 +43,26 @@ DELETE FROM enlaces WHERE id=?
   }
 };
 
+//todos los enlaces de un usuario
+/*const getEnalcesByUserId = async (id) => {
+  let connection;
+
+  try {
+    connection = await getConnection();
+
+    const [result] = await connection.query(
+      `
+          SELECT enlaces.*, users.email FROM enlaces LEFT JOIN users on enlaces.user_id = users.id WHERE enlaces.user_id = ?
+    `,
+      [id]
+    );
+
+    return result;
+  } finally {
+    if (connection) connection.release();
+  }
+};*/
+
 const getAllEnlaces = async () => {
   let connection;
 

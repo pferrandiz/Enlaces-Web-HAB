@@ -45,14 +45,7 @@ function App() {
               </PrivatePage>
             }
           />
-          <Route
-            path="/user/:id"
-            element={
-              <PrivatePage>
-                <UserPage />
-              </PrivatePage>
-            }
-          />
+          <Route path="/user/:id" element={<UserPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />

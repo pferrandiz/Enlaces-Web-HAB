@@ -21,7 +21,7 @@ const useEnlace = (id) => {
       }
     };
     loadEnlace();
-  }, [id]);
+  }, [id, token]);
   return { enlace, error, loading };
 };
 

@@ -85,7 +85,7 @@ export const NewEnlace = ({ addEnlace }) => {
               <figure>
                 <img
                   src={URL.createObjectURL(image)}
-                  style={{ width: "200px" }}
+                  style={{ width: "100px" }}
                   alt="Preview"
                 />
               </figure>

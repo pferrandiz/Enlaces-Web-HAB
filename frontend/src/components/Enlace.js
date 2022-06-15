@@ -9,6 +9,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate("");
+
   const deleteEnlace = async (id) => {
     try {
       await deleteEnlaceService({ id, token });
@@ -23,7 +24,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
   };
 
   return (
-    <article>
+    <article className="enlace">
       <p>{enlace.url}</p>
       {enlace.image ? (
         <img
@@ -33,7 +34,8 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
       <p>{enlace.text}</p>
       <p>
-        By <Link to={`/user/${enlace.user_id}`}> {enlace.email}</Link> on{""}
+        Escrito por <Link to={`/user/${enlace.user_id}`}> {enlace.email}</Link>{" "}
+        el {""}
         <Link to={`/enlace/${enlace.id}`}>
           {new Date(enlace.created_at).toLocaleString()}
         </Link>

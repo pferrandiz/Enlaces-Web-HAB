@@ -12,7 +12,7 @@ export const UserPage = () => {
 
   return (
     <section>
-      <h1>Usuario {user.name.surname}</h1>
+      <h1>Usuario {user.name}</h1>
       <section class="user-data">
         <p>User id: {user.email}</p>
         <p> id={user.id}</p>
