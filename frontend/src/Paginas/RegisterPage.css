@@ -3,24 +3,24 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.form-login {
-  width: 400px;
-  height: 340px;
+.form-register {
+  width: 500px;
+  height: 400px;
   background: #ffc017;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 75px;
   border-radius: 20px;
   box-shadow: 7px 13px 37px #000;
-  padding: 50px 100px;
+  padding: 18px 50px;
 }
 /*.form-login h1 {
   margin 0;
   text-align: center;
   font-family: 40px;
 }*/
-.controls1 {
-  width: 200px;
-  margin-bottom: 15px;
-  padding: 8px 8px;
+.controls2 {
+  width: 400px;
+  margin-bottom: 3.5px;
+  padding: 11px 11px;
   border-bottom: none;
 }

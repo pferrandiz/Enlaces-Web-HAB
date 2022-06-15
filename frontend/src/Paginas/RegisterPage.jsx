@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUserService } from "../comunicaciones";
+import "./RegisterPage.css";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
@@ -27,10 +28,10 @@ export const RegisterPage = () => {
   };
 
   return (
-    <section>
+    <section className="form-register">
       <h1>Registro</h1>
       <form onSubmit={handleForm}>
-        <fieldset>
+        <fieldset class="controls2">
           <label htmlFor="name">Nombre</label>
           <input
             type="name"
@@ -41,7 +42,7 @@ export const RegisterPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </fieldset>
-        <fieldset>
+        <fieldset class="controls2">
           <label htmlFor="surname">Apellido</label>
           <input
             type="surname"
@@ -52,7 +53,7 @@ export const RegisterPage = () => {
             onChange={(e) => setSurname(e.target.value)}
           />
         </fieldset>
-        <fieldset>
+        <fieldset class="controls2">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -63,7 +64,7 @@ export const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-        <fieldset>
+        <fieldset class="controls2">
           <label htmlFor="password1">Contraseña</label>
           <input
             type="password"
@@ -74,7 +75,7 @@ export const RegisterPage = () => {
             onChange={(e) => setPassword1(e.target.value)}
           />
         </fieldset>
-        <fieldset>
+        <fieldset class="controls2">
           <label htmlFor="password2">Repite Contraseña</label>
           <input
             type="password"
