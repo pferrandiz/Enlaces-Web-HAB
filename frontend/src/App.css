@@ -37,8 +37,8 @@ footer {
 
 button {
   border: 1.7px solid #000000;
-  padding: 12px;
-  background-color: var(--cp);
+  padding: 9px;
+  background-color: whitesmoke;
   color: #040404;
   text-transform: uppercase;
   border-radius: 10px;

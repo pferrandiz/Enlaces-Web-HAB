@@ -23,6 +23,7 @@ const newUserController = async (req, res, next) => {
 const getMyUserController = async (req, res, next) => {
   try {
     const id = req.userId;
+    console.log(id);
     const user = await getUserbyId(id);
     res.send({
       status: "ok",

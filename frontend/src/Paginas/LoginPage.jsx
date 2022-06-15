@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUserService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
+import "./LoginPage.css";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -22,10 +23,10 @@ export const LoginPage = () => {
     }
   };
   return (
-    <section>
+    <section className="form-login">
       <h1>Iniciar Sesión</h1>
       <form onSubmit={handleForm}>
-        <fieldset>
+        <fieldset class="controls">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -34,9 +35,10 @@ export const LoginPage = () => {
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Escribe tu Email"
           />
         </fieldset>
-        <fieldset>
+        <fieldset class="controls">
           <label htmlFor="password">Contraseña</label>
           <input
             type="password"
@@ -45,6 +47,7 @@ export const LoginPage = () => {
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Escribe tu Contraseña"
           />
         </fieldset>
 
