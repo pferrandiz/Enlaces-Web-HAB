@@ -54,7 +54,8 @@ export const LoginPage = () => {
         <button>Iniciar Sesión</button>
         {error ? <p>{error}</p> : null}
         <p>
-          Si no tienes cuenta puedes <Link to="/register">registrarte</Link>
+          Si no tienes cuenta aquí puedes{" "}
+          <Link to="/register"> Registrarte</Link>
         </p>
       </form>
     </section>

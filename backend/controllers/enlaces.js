@@ -48,9 +48,11 @@ const newEnlaceController = async (req, res, next) => {
     }
 
     const id = await createEnlace(req.userId, text, title, url, imageFileName);
+
+    const enlaceCreado = await getEnlaceById(id);
     res.send({
       status: "ok",
-      message: `Enlace con id: ${id} creado correctamente`,
+      data: enlaceCreado,
     });
   } catch (error) {
     next(error);

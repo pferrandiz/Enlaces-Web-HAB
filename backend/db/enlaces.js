@@ -50,8 +50,7 @@ const getAllEnlaces = async () => {
     connection = await getConnection();
 
     const [result] = await connection.query(`
-select enlaces.*, count(votos.id) as votos from enlaces left join votos on enlaces.id = votos.enlace_id group by enlace_id ORDER BY created_at DESC;
-`);
+select enlaces.*, count(votos.id) as votos from enlaces left join votos on votos.enlace_id = enlaces.id group by enlaces.id ORDER BY created_at DESC;`);
     return result;
   } finally {
     if (connection) connection.release();
