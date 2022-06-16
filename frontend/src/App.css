@@ -38,9 +38,9 @@ footer {
   text-align: center;
 }
 button {
-  border: 1.7px solid #000000;
+  border: 1.8px solid #000000;
   padding: 9px;
-  background-color: whitesmoke;
+  background-color: rgb(225, 224, 224);
   color: #040404;
   text-transform: uppercase;
   border-radius: 10px;

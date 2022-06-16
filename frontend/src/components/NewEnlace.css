@@ -4,23 +4,23 @@
   box-sizing: border-box;
 }
 .form-newenlace {
-  width: 400px;
-  height: 340px;
+  width: 600px;
+  height: 450px;
   background: #ffc017;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 40px;
   border-radius: 20px;
   box-shadow: 7px 13px 37px #000;
   padding: 50px 100px;
 }
-/*.form-login h1 {
-  margin 0;
+.form-newenlace.h1 {
   text-align: center;
-  font-family: 40px;
-}*/
+  font-family: 80px;
+}
 .controls2 {
   width: 200px;
   margin-bottom: 15px;
   padding: 8px 8px;
   border-bottom: none;
+  text-align: justify;
 }
