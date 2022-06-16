@@ -52,7 +52,7 @@ export const NewEnlace = ({ addEnlace }) => {
             onChange={(e) => setTitle(e.target.files)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="url">Nuevo Enlace</label>
           <input
             type="url"
@@ -62,7 +62,7 @@ export const NewEnlace = ({ addEnlace }) => {
             onChange={(e) => setUrl(e.target.files)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="text">Texto</label>
           <input
             type="text"
@@ -71,7 +71,7 @@ export const NewEnlace = ({ addEnlace }) => {
             onChange={(e) => setText(e.target.files)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="image">Imagen</label>
           <input
             type="file"

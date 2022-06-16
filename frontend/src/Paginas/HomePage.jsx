@@ -4,13 +4,14 @@ import { NewEnlace } from "../components/NewEnlace";
 import { ListEnlaces } from "../components/ListEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
+import "./HomePage.css";
 
 export const HomePage = () => {
   const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
 
   return (
-    <section>
+    <section className="homepage">
       {loading ? (
         <p>Cargando enlace ......</p>
       ) : (
@@ -18,8 +19,12 @@ export const HomePage = () => {
           {error && <ErrorMessage message={error} />}
           {user && <NewEnlace addEnlace={addEnlace} />}
 
-          <h1>Nuevos Enlaces</h1>
-          <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+          <ul className="title">
+            <h1>Nuevos Enlaces</h1>
+            <li className="enlaces">
+              <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+            </li>
+          </ul>
         </>
       )}
     </section>
