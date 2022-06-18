@@ -40,8 +40,8 @@ footer {
 button {
   border: 1.8px solid #000000;
   padding: 9px;
-  background-color: rgb(225, 224, 224);
-  color: #040404;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
   text-transform: uppercase;
   border-radius: 10px;
 }
