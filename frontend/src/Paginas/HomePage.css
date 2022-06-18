@@ -7,6 +7,10 @@
   text-align: center;
 }
 
-.title ul {
+.title {
   font-size: 50px;
+  font-style: initial;
+}
+.enlaces {
+  font-size: 30px;
 }

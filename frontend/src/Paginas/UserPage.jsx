@@ -15,7 +15,9 @@ export const UserPage = () => {
       <h1>Usuario {user.email}</h1>
       <section className="user-data">
         <p>User id: {user.id}</p>
-        <p>Registrado desde : {new Date(user.created_at).toLocaleString()} </p>
+        <p>
+          Registrado desde : {new Date(user.created_at).toLocaleDateString()}{" "}
+        </p>
         <UserEnlaces id={user.id} />
       </section>
     </section>

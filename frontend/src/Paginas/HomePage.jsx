@@ -20,7 +20,7 @@ export const HomePage = () => {
           {user && <NewEnlace addEnlace={addEnlace} />}
 
           <ul className="title">
-            <h1>Nuevos Enlaces</h1>
+            <h1> tus nuevos Enlaces</h1>
             <li className="enlaces">
               <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
             </li>

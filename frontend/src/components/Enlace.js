@@ -42,7 +42,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
 
       <p>
-        <Link to={`/user/${enlace.user_id}`}> {user.email}</Link> /
+        <Link to={`/user/${enlace.user_id}`}> usuario</Link> /
         {new Date().toLocaleDateString()}/<button>me gusta⭐</button>
       </p>
       {user && user.id === enlace.user_id ? (
