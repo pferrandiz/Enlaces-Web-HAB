@@ -12,7 +12,7 @@ export const EnlacePage = () => {
 
   return (
     <section>
-      <h1>Enlace escrito por {enlace.email}</h1>
+      <h1>Enlace escrito por {enlace.url}</h1>
       <Enlace enlace={enlace} />
     </section>
   );

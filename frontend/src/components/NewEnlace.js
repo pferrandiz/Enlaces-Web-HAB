@@ -42,7 +42,7 @@ export const NewEnlace = ({ addEnlace }) => {
     <section className="form-newenlace">
       <h1>Publica nuevo Enlace</h1>
       <form onSubmit={handleForm}>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="title">Título</label>
           <input
             type="text"
@@ -91,7 +91,7 @@ export const NewEnlace = ({ addEnlace }) => {
           ) : null}
         </fieldset>
         <button>Publicar Enlace </button>
-        {sending ? <p>Enviando Enlace....</p> : null};
+        {sending ? <p>Enviando Enlace....</p> : null}
         {error ? <p>{error}</p> : null}
       </form>
     </section>

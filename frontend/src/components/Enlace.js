@@ -25,20 +25,25 @@ export const Enlace = ({ enlace, removeEnlace }) => {
 
   return (
     <article className="enlace">
-      <p>{enlace.url}</p>
+      <p>{enlace.title}</p>
+
+      <p>
+        <a href={enlace.url} target="_blank" rel="noreferrer">
+          {enlace.url}
+        </a>
+      </p>
+      <p>{enlace.text}</p>
+
       {enlace.image ? (
         <img
           src={`${process.env.REACT_APP_BACKEND}/upload/${enlace.image}`}
           alt={enlace.text}
         />
       ) : null}
-      <p>{enlace.text}</p>
+
       <p>
-        Escrito por <Link to={`/user/${enlace.user_id}`}> {enlace.email}</Link>{" "}
-        el {""}
-        <Link to={`/enlace/${enlace.id}`}>
-          {new Date(enlace.created_at).toLocaleString()}
-        </Link>
+        <Link to={`/user/${enlace.user_id}`}> {user.email}</Link> /
+        {new Date().toLocaleDateString()}/<button>me gusta⭐</button>
       </p>
       {user && user.id === enlace.user_id ? (
         <section>
@@ -46,7 +51,6 @@ export const Enlace = ({ enlace, removeEnlace }) => {
           {error ? <p>{error}</p> : null}
         </section>
       ) : null}
-      ;
     </article>
   );
 };

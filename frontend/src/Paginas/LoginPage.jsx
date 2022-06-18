@@ -26,7 +26,7 @@ export const LoginPage = () => {
     <section className="form-login">
       <h1>Iniciar Sesión</h1>
       <form onSubmit={handleForm}>
-        <fieldset class="controls1">
+        <fieldset className="controls1">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -38,7 +38,7 @@ export const LoginPage = () => {
             placeholder="Escribe tu Email"
           />
         </fieldset>
-        <fieldset class="controls1">
+        <fieldset className="controls1">
           <label htmlFor="password">Contraseña</label>
           <input
             type="password"

@@ -10,13 +10,13 @@ export const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [error, setError] = useState("Este email ya existe");
+  const [error, setError] = useState("");
 
   const handleForm = async (e) => {
     e.preventDefault();
     setError("");
     if (password1 !== password2) {
-      setError("Las contraseñas debe ser iguales");
+      setError("pnmatch");
       return;
     }
     try {
@@ -31,7 +31,7 @@ export const RegisterPage = () => {
     <section className="form-register">
       <h1>Registro</h1>
       <form onSubmit={handleForm}>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="name">Nombre</label>
           <input
             type="name"
@@ -42,7 +42,7 @@ export const RegisterPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="surname">Apellido</label>
           <input
             type="surname"
@@ -53,7 +53,7 @@ export const RegisterPage = () => {
             onChange={(e) => setSurname(e.target.value)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -64,7 +64,7 @@ export const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="password1">Contraseña</label>
           <input
             type="password"
@@ -75,7 +75,7 @@ export const RegisterPage = () => {
             onChange={(e) => setPassword1(e.target.value)}
           />
         </fieldset>
-        <fieldset class="controls2">
+        <fieldset className="controls2">
           <label htmlFor="password2">Repite Contraseña</label>
           <input
             type="password"
@@ -87,7 +87,7 @@ export const RegisterPage = () => {
           />
         </fieldset>
         <button>Registrarse</button>
-        {error ? <p>{error}</p> : null}
+        {error === "pnmatch" ? "Las contraseñas debe ser iguales" : null}
       </form>
     </section>
   );
