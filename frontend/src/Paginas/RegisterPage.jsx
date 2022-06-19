@@ -29,7 +29,7 @@ export const RegisterPage = () => {
 
   return (
     <section className="form-register">
-      <h1>Registro</h1>
+      <h1 className="h1">Registro</h1>
       <form onSubmit={handleForm}>
         <fieldset className="controls2">
           <label htmlFor="name">Nombre</label>
