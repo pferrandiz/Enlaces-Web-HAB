@@ -24,7 +24,7 @@ export const LoginPage = () => {
   };
   return (
     <section className="form-login">
-      <h1>Iniciar Sesión</h1>
+      <h1 className="h1login">Iniciar Sesión</h1>
       <form onSubmit={handleForm}>
         <fieldset className="controls1">
           <label htmlFor="email">Email</label>
