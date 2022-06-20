@@ -70,7 +70,9 @@ const getAllEnlaces = async () => {
     connection = await getConnection();
 
     const [result] = await connection.query(`
-select enlaces.*, count(votos.id) as votos from enlaces left join votos on votos.enlace_id = enlaces.id group by enlaces.id ORDER BY created_at DESC;`);
+select enlaces.*, users.name, users.surname, count(votos.id) as votos from enlaces
+inner join users on enlaces.user_id = users.id
+left join votos on votos.enlace_id = enlaces.id group by enlaces.id ORDER BY created_at DESC;`);
     return result;
   } finally {
     if (connection) connection.release();

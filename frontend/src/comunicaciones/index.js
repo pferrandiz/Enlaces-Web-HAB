@@ -145,3 +145,21 @@ export const deleteEnlaceService = async ({ id, token }) => {
     throw new Error(json.message);
   }
 };
+
+export const voteEnlaceService = async ({ id, data, token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/votos/${id}`, {
+    method: "POST",
+    body: data,
+    headers: {
+      Authorization: token,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};

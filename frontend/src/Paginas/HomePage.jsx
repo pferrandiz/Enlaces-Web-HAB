@@ -7,7 +7,8 @@ import useEnlaces from "../hooks/useEnlaces";
 import "./HomePage.css";
 
 export const HomePage = () => {
-  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
+  const { enlaces, loading, error, addEnlace, removeEnlace, setRefres } =
+    useEnlaces();
   const { user } = useContext(AuthContext);
 
   return (
@@ -20,9 +21,13 @@ export const HomePage = () => {
           {user && <NewEnlace addEnlace={addEnlace} />}
 
           <ul className="title">
-            <h1> tus nuevos Enlaces</h1>
+            <h1> Nuevos Enlaces</h1>
             <li className="enlaces">
-              <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+              <ListEnlaces
+                enlaces={enlaces}
+                removeEnlace={removeEnlace}
+                setRefres={setRefres}
+              />
             </li>
           </ul>
         </>

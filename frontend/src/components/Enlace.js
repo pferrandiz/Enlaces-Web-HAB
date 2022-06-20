@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useContext } from "react";
 import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
+import { voteEnlaceService } from "../comunicaciones";
 
-export const Enlace = ({ enlace, removeEnlace }) => {
+export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate("");
@@ -18,6 +19,16 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       } else {
         navigate("/");
       }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  const voteEnlace = async (e, id) => {
+    e.preventDefault();
+    try {
+      await voteEnlaceService({ id, token });
+      setRefres(true);
+      addVoto(voto);
     } catch (error) {
       setError(error.message);
     }
@@ -42,9 +53,15 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
 
       <p>
-        <Link to={`/user/${enlace.user_id}`}> usuario</Link> /
-        {new Date().toLocaleDateString()}/<button>me gusta⭐</button>
+        <Link to={`/user/${enlace.user_id}`}>
+          {" "}
+          {enlace.name}
+          {enlace.surname}
+          {!voto ? enlace.votos : voto}
+        </Link>{" "}
+        /{new Date().toLocaleDateString()}/
       </p>
+      <button onClick={(e) => voteEnlace(e, enlace.id)}>me gusta⭐</button>
       {user && user.id === enlace.user_id ? (
         <section>
           <button onClick={() => deleteEnlace(enlace.id)}>Borrar Enlace</button>
