@@ -40,9 +40,10 @@ export const RegisterPage = () => {
             value={name}
             required
             onChange={(e) => setName(e.target.value)}
+            placeholder="Escribe tu Nombre"
           />
 
-          <label htmlFor="surname">Apellido</label>
+          <label htmlFor="surname">Apellidos</label>
           <input
             type="surname"
             id="surname"
@@ -50,6 +51,7 @@ export const RegisterPage = () => {
             value={surname}
             required
             onChange={(e) => setSurname(e.target.value)}
+            placeholder="Escribe tus Apellidos"
           />
 
           <label htmlFor="email">Email</label>
@@ -60,6 +62,7 @@ export const RegisterPage = () => {
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Escribe tu Email"
           />
 
           <label htmlFor="password1">Contraseña</label>
@@ -70,6 +73,7 @@ export const RegisterPage = () => {
             value={password1}
             required
             onChange={(e) => setPassword1(e.target.value)}
+            placeholder="Escribe tu Contraseña"
           />
 
           <label htmlFor="password2">Repite Contraseña</label>
@@ -80,6 +84,7 @@ export const RegisterPage = () => {
             value={password2}
             required
             onChange={(e) => setPassword2(e.target.value)}
+            placeholder="Repite tu Contraseña"
           />
           <button>Registrarse</button>
           {error === "pnmatch" ? "Las contraseñas debe ser iguales" : null}

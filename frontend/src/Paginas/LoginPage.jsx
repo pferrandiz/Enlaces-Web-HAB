@@ -26,7 +26,7 @@ export const LoginPage = () => {
     <section className="form-login">
       <h1 className="h1login">Iniciar Sesión</h1>
       <form onSubmit={handleForm}>
-        <fieldset className="controls1">
+        <li className="controls1">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -37,8 +37,7 @@ export const LoginPage = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Escribe tu Email"
           />
-        </fieldset>
-        <fieldset className="controls1">
+
           <label htmlFor="password">Contraseña</label>
           <input
             type="password"
@@ -49,14 +48,15 @@ export const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Escribe tu Contraseña"
           />
-        </fieldset>
 
-        <button>Iniciar Sesión</button>
-        {error ? <p>{error}</p> : null}
-        <p>
-          Si no tienes cuenta aquí puedes{" "}
-          <Link to="/register"> Registrarte</Link>
-        </p>
+          <button>Iniciar Sesión</button>
+
+          {error ? <p>{error}</p> : null}
+          <p>
+            Si no tienes cuenta aquí puedes :{" "}
+            <Link to="/register"> REGISTRARTE</Link>
+          </p>
+        </li>
       </form>
     </section>
   );
