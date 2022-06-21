@@ -1,0 +1,27 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.home {
+  grid-template-columns: repeat(auto-fit), minmax(400px, 1fr);
+  margin-top: 50px;
+}
+.home h1 {
+  font-size: 170px;
+  padding-left: 3cm;
+  color: #ffc017;
+
+  -webkit-text-stroke: 3px rgb(0, 0, 0);
+}
+.home h2 {
+  font-size: 60px;
+  padding-left: 6cm;
+  color: black;
+  margin-top: 15px;
+}
+.home p {
+  font-size: 30px;
+  padding-left: 6cm;
+  margin-top: 10px;
+}

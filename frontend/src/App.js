@@ -3,7 +3,7 @@ import "./App.css";
 
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-
+import Home from "./Paginas/Home";
 import { HomePage } from "./Paginas/HomePage";
 import { RegisterPage } from "./Paginas/RegisterPage";
 import { LoginPage } from "./Paginas/LoginPage";
@@ -27,8 +27,9 @@ function App() {
       <main>
         <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <PrivatePage>
                 <HomePage />

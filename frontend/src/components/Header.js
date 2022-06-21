@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header>
       <h1>
-        <Link to={"/"}>tuEnlace</Link>
+        <Link to={"/home"}>tuEnlace</Link>
       </h1>
       <nav>
         <Auth />

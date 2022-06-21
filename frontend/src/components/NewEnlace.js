@@ -42,54 +42,50 @@ export const NewEnlace = ({ addEnlace }) => {
     <section className="form-newenlace">
       <h1>Publica nuevo Enlace</h1>
       <form onSubmit={handleForm}>
-        <fieldset className="controls2">
-          <label htmlFor="title">Título</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            required
-            onChange={(e) => setTitle(e.target.files)}
-          />
-        </fieldset>
-        <fieldset className="controls2">
-          <label htmlFor="url">Nuevo Enlace</label>
-          <input
-            type="url"
-            id="url"
-            name="url"
-            required
-            onChange={(e) => setUrl(e.target.files)}
-          />
-        </fieldset>
-        <fieldset className="controls2">
-          <label htmlFor="text">Texto</label>
-          <input
-            type="text"
-            id="text"
-            name="text"
-            onChange={(e) => setText(e.target.files)}
-          />
-        </fieldset>
-        <fieldset className="controls2">
-          <label htmlFor="image">Imagen</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-          {image ? (
-            <figure>
-              <img
-                src={URL.createObjectURL(image)}
-                style={{ width: "100px" }}
-                alt="Preview"
-              />
-            </figure>
-          ) : null}
-        </fieldset>
+        <label htmlFor="title">Título</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          onChange={(e) => setTitle(e.target.files)}
+        />
+
+        <label htmlFor="url">Nuevo Enlace</label>
+        <input
+          type="url"
+          id="url"
+          name="url"
+          required
+          onChange={(e) => setUrl(e.target.files)}
+        />
+
+        <label htmlFor="text">Texto</label>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          onChange={(e) => setText(e.target.files)}
+        />
+
+        <label htmlFor="image">Imagen</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+        {image ? (
+          <figure>
+            <img
+              src={URL.createObjectURL(image)}
+              style={{ width: "100px" }}
+              alt="Preview"
+            />
+          </figure>
+        ) : null}
+
         <button>Publicar Enlace </button>
         {sending ? <p>Enviando Enlace....</p> : null}
         {error ? <p>{error}</p> : null}

@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 import { voteEnlaceService } from "../comunicaciones";
+import { deleteVotoService } from "../comunicaciones";
 
 export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
   const { user, token } = useContext(AuthContext);
@@ -13,6 +14,8 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
 
   const deleteEnlace = async (id) => {
     try {
+      await deleteVotoService({ id, token });
+
       await deleteEnlaceService({ id, token });
       if (removeEnlace) {
         removeEnlace(id);
