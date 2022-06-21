@@ -31,7 +31,7 @@ export const RegisterPage = () => {
     <section className="form-register">
       <h1 className="h1">Registro</h1>
       <form onSubmit={handleForm}>
-        <fieldset className="controls2">
+        <li className="lista">
           <label htmlFor="name">Nombre</label>
           <input
             type="name"
@@ -41,8 +41,7 @@ export const RegisterPage = () => {
             required
             onChange={(e) => setName(e.target.value)}
           />
-        </fieldset>
-        <fieldset className="controls2">
+
           <label htmlFor="surname">Apellido</label>
           <input
             type="surname"
@@ -52,8 +51,7 @@ export const RegisterPage = () => {
             required
             onChange={(e) => setSurname(e.target.value)}
           />
-        </fieldset>
-        <fieldset className="controls2">
+
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -63,8 +61,7 @@ export const RegisterPage = () => {
             required
             onChange={(e) => setEmail(e.target.value)}
           />
-        </fieldset>
-        <fieldset className="controls2">
+
           <label htmlFor="password1">Contraseña</label>
           <input
             type="password"
@@ -74,8 +71,7 @@ export const RegisterPage = () => {
             required
             onChange={(e) => setPassword1(e.target.value)}
           />
-        </fieldset>
-        <fieldset className="controls2">
+
           <label htmlFor="password2">Repite Contraseña</label>
           <input
             type="password"
@@ -85,9 +81,9 @@ export const RegisterPage = () => {
             required
             onChange={(e) => setPassword2(e.target.value)}
           />
-        </fieldset>
-        <button>Registrarse</button>
-        {error === "pnmatch" ? "Las contraseñas debe ser iguales" : null}
+          <button>Registrarse</button>
+          {error === "pnmatch" ? "Las contraseñas debe ser iguales" : null}
+        </li>
       </form>
     </section>
   );
