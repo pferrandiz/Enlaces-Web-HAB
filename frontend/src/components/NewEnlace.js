@@ -40,55 +40,57 @@ export const NewEnlace = ({ addEnlace }) => {
 
   return (
     <section className="form-newenlace">
-      <h1>Publica nuevo Enlace</h1>
+      <h1 className="h1new">Publica nuevo Enlace</h1>
       <form onSubmit={handleForm}>
-        <label htmlFor="title">Título</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          required
-          onChange={(e) => setTitle(e.target.files)}
-        />
+        <li className="controls2">
+          <label htmlFor="title">Título</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            onChange={(e) => setTitle(e.target.files)}
+          />
 
-        <label htmlFor="url">Nuevo Enlace</label>
-        <input
-          type="url"
-          id="url"
-          name="url"
-          required
-          onChange={(e) => setUrl(e.target.files)}
-        />
+          <label htmlFor="url">Nuevo Enlace</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            required
+            onChange={(e) => setUrl(e.target.files)}
+          />
 
-        <label htmlFor="text">Texto</label>
-        <input
-          type="text"
-          id="text"
-          name="text"
-          onChange={(e) => setText(e.target.files)}
-        />
+          <label htmlFor="text">Texto</label>
+          <input
+            type="text"
+            id="text"
+            name="text"
+            onChange={(e) => setText(e.target.files)}
+          />
 
-        <label htmlFor="image">Imagen</label>
-        <input
-          type="file"
-          id="image"
-          name="image"
-          accept="image/*"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
-        {image ? (
-          <figure>
-            <img
-              src={URL.createObjectURL(image)}
-              style={{ width: "100px" }}
-              alt="Preview"
-            />
-          </figure>
-        ) : null}
+          <label htmlFor="image">Imagen</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+          {image ? (
+            <figure>
+              <img
+                src={URL.createObjectURL(image)}
+                style={{ width: "100px" }}
+                alt="Preview"
+              />
+            </figure>
+          ) : null}
 
-        <button>Publicar Enlace </button>
-        {sending ? <p>Enviando Enlace....</p> : null}
-        {error ? <p>{error}</p> : null}
+          <button>Publicar Enlace </button>
+          {sending ? <p>Enviando Enlace....</p> : null}
+          {error ? <p>{error}</p> : null}
+        </li>
       </form>
     </section>
   );

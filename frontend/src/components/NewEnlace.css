@@ -13,14 +13,61 @@
   box-shadow: 7px 13px 37px #000;
   padding: 50px 100px;
 }
-.controls2.h1 {
+.h1new {
+  width: center;
   text-align: center;
-  font-family: 200px;
+  font-size: 35px;
 }
-.controls2 {
+
+.controls2 label {
+  padding: 12.5px;
   width: 200px;
-  margin-bottom: 15px;
-  padding: 8px 8px;
-  border-bottom: none;
-  text-align: justify;
+  font-weight: bold;
+  display: inline-block;
+}
+.controls2 input[type="text"] {
+  width: 300px;
+  padding: 3px 10px;
+  border: 3px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 5px 0;
+
+  display: inline-block;
+}
+.controls2 input[type="url"] {
+  width: 300px;
+  padding: 3px 10px;
+  border: 3px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 5px 0;
+
+  display: inline-block;
+}
+.controls2 input[type="tex"] {
+  width: 300px;
+  padding: 3px 10px;
+  border: 3px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 5px 0;
+
+  display: inline-block;
+}
+.controls2 input[type="file"] {
+  width: 300px;
+  padding: 3px 10px;
+  border: 3px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 5px 0;
+
+  display: inline-block;
+}
+.controls2 button {
+  margin-left: 80px;
+  margin-top: 20px;
+  width: center;
+  padding: 10px;
 }
