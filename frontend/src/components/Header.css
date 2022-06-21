@@ -4,12 +4,48 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-style: groove;
 }
 
-header nav ul {
+header nav {
   display: flex;
   list-style: none;
   gap: 1rem;
   text-transform: uppercase;
   text-decoration-line: none;
+}
+header h1 {
+  font-size: 3.2rem;
+}
+nav {
+  font-size: 1.2rem;
+  gap: 2rem;
+}
+
+a:link {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 20px 2px;
+}
+a:link {
+  color: #0a0a0a;
+}
+
+a:visited {
+  color: #030303;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #ffc017;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #ffc017;
+}
+
+a:active {
+  background: #020202;
+  color: #ffc017;
 }

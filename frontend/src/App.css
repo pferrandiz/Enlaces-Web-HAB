@@ -33,9 +33,12 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   color: black;
   text-align: center;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  border-style: groove;
 }
 button {
   border: 1.8px solid #000000;
