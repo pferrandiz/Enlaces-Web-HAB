@@ -1,0 +1,42 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/*t-size: 50px;
+}*/
+.enlace {
+  border-bottom: dotted 4px #ffc017;
+  width: 75%;
+  margin-left: 12rem;
+  padding-top: 4rem;
+  padding: 3rem;
+}
+.enlace nav {
+  font-size: 50px;
+  font-style: oblique;
+  letter-spacing: 6px;
+}
+.enlace img {
+  width: 4cm;
+  height: 4cm;
+  float: right;
+}
+.enlace h1 {
+  font-size: 40px;
+}
+.enlace h2 {
+  font-size: 25px;
+  font-style: italic;
+}
+.enlace option {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.enlace button {
+  margin-top: 2rem;
+  margin-right: 15cm;
+}
+.enlace input {
+  margin-left: 30cm;
+  margin-top: 15;
+}

@@ -20,8 +20,8 @@ export const HomePage = () => {
           {error && <ErrorMessage message={error} />}
           {user && <NewEnlace addEnlace={addEnlace} />}
 
-          <ul className="title">
-            <h1> Nuevos Enlaces</h1>
+          <ul>
+            <h1 className="title"> Nuevos Enlaces</h1>
             <li className="enlaces">
               <ListEnlaces
                 enlaces={enlaces}

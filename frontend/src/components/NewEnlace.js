@@ -61,7 +61,7 @@ export const NewEnlace = ({ addEnlace }) => {
             onChange={(e) => setUrl(e.target.files)}
           />
 
-          <label htmlFor="text">Texto</label>
+          <label htmlFor="text">Descripción</label>
           <input
             type="text"
             id="text"

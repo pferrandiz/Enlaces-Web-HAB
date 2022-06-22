@@ -6,6 +6,7 @@ import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 import { voteEnlaceService } from "../comunicaciones";
 import { deleteVotoService } from "../comunicaciones";
+import "./Enlace.css";
 
 export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
   const { user, token } = useContext(AuthContext);
@@ -39,32 +40,30 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
 
   return (
     <article className="enlace">
-      <p>{enlace.title}</p>
-
-      <p>
-        <a href={enlace.url} target="_blank" rel="noreferrer">
-          {enlace.url}
-        </a>
-      </p>
-      <p>{enlace.text}</p>
-
+      <div className="dark">
+        <h1>Título:{enlace.title}</h1>
+      </div>
       {enlace.image ? (
         <img
           src={`${process.env.REACT_APP_BACKEND}/upload/${enlace.image}`}
           alt={enlace.text}
         />
       ) : null}
-
-      <p>
+      <nav>
+        <a href={enlace.url} target="_blank" rel="noreferrer">
+          {enlace.url}
+        </a>
+      </nav>
+      <h2>Descripción:{enlace.text}</h2>
+      <option>
         <Link to={`/user/${enlace.user_id}`}>
           {" "}
-          {enlace.name}
-          {enlace.surname}
-          {!voto ? enlace.votos : voto}
+          {enlace.name}&nbsp;{enlace.surname}
         </Link>{" "}
-        /{new Date().toLocaleDateString()}/
-      </p>
-      <button onClick={(e) => voteEnlace(e, enlace.id)}>me gusta⭐</button>
+        {new Date().toLocaleDateString()}
+      </option>
+      <button onClick={(e) => voteEnlace(e, enlace.id)}>me gusta</button>*
+      {!voto ? enlace.votos : voto}*
       {user && user.id === enlace.user_id ? (
         <section>
           <button onClick={() => deleteEnlace(enlace.id)}>Borrar Enlace</button>
