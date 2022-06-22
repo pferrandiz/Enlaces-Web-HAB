@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { UserEnlaces } from "../components/UserEnlaces";
+import "./UserPage.css";
 
 export const UserPage = () => {
   const { id } = useParams();
@@ -11,15 +12,14 @@ export const UserPage = () => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <section>
+    <section className="pageuser">
       <h1>Usuario {user.email}</h1>
-      <section className="user-data">
-        <p>User id: {user.id}</p>
-        <p>
-          Registrado desde : {new Date(user.created_at).toLocaleDateString()}{" "}
-        </p>
-        <UserEnlaces id={user.id} />
-      </section>
+
+      <p>User id: {user.id}</p>
+      <p>
+        Registrado desde : {new Date(user.created_at).toLocaleDateString()}{" "}
+      </p>
+      <UserEnlaces id={user.id} />
     </section>
   );
 };

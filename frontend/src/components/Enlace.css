@@ -3,8 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 }
-/*t-size: 50px;
-}*/
+
 .enlace {
   border-bottom: dotted 4px #ffc017;
   width: 75%;
@@ -33,10 +32,11 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .enlace button {
-  margin-top: 2rem;
+  margin-top: center;
+
   margin-right: 15cm;
+  background-color: #ffc017;
 }
-.enlace input {
-  margin-left: 30cm;
-  margin-top: 15;
+#btn1 {
+  margin-left: 15cm;
 }

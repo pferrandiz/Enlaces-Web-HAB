@@ -55,21 +55,26 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
         </a>
       </nav>
       <h2>Descripción:{enlace.text}</h2>
-      <option>
+      <p>
         <Link to={`/user/${enlace.user_id}`}>
           {" "}
           {enlace.name}&nbsp;{enlace.surname}
         </Link>{" "}
         {new Date().toLocaleDateString()}
-      </option>
-      <button onClick={(e) => voteEnlace(e, enlace.id)}>me gusta</button>*
-      {!voto ? enlace.votos : voto}*
-      {user && user.id === enlace.user_id ? (
-        <section>
-          <button onClick={() => deleteEnlace(enlace.id)}>Borrar Enlace</button>
-          {error ? <p>{error}</p> : null}
-        </section>
-      ) : null}
+      </p>
+      <div>
+        <button id="btn" onClick={(e) => voteEnlace(e, enlace.id)}>
+          me gusta {!voto ? enlace.votos : voto}
+        </button>
+        {user && user.id === enlace.user_id ? (
+          <section>
+            <button id="btn1" onClick={() => deleteEnlace(enlace.id)}>
+              Borrar Enlace
+            </button>
+            {error ? <p>{error}</p> : null}
+          </section>
+        ) : null}
+      </div>
     </article>
   );
 };
