@@ -33,10 +33,10 @@
 }
 .enlace button {
   margin-top: center;
-
-  margin-right: 15cm;
   background-color: #ffc017;
+  border: 2.2px solid #000;
+  padding: 10px;
 }
 #btn1 {
-  margin-left: 15cm;
+  margin-left: center;
 }

@@ -64,7 +64,7 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
       </p>
       <div>
         <button id="btn" onClick={(e) => voteEnlace(e, enlace.id)}>
-          me gusta {!voto ? enlace.votos : voto}
+          me gustas {!voto ? enlace.votos : voto}
         </button>
         {user && user.id === enlace.user_id ? (
           <section>
