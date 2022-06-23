@@ -9,11 +9,21 @@ const {
   deleteEnlaceById,
   votarEnlace,
   borrarVotoEnlace,
+  getAllEnlacesFromUserId,
 } = require("../db/enlaces");
 
 const getEnlacesController = async (req, res, next) => {
   try {
     const enlaces = await getAllEnlaces();
+    res.send(enlaces);
+  } catch (error) {
+    next(error);
+  }
+};
+const getEnlacesFromUserController = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const enlaces = await getAllEnlacesFromUserId(id);
     res.send(enlaces);
   } catch (error) {
     next(error);
@@ -135,4 +145,5 @@ module.exports = {
   deleteEnlaceController,
   votarEnlaceController,
   borrarVotoController,
+  getEnlacesFromUserController,
 };

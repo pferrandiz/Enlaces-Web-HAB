@@ -55,6 +55,27 @@ left join votos on votos.enlace_id = enlaces.id group by enlaces.id ORDER BY cre
     if (connection) connection.release();
   }
 };
+const getAllEnlacesFromUserId = async (id) => {
+  let connection;
+
+  try {
+    connection = await getConnection();
+
+    const [result] = await connection.query(
+      `
+select enlaces.*, users.name, users.surname, count(votos.id) as votos from enlaces
+inner join users on enlaces.user_id = users.id
+left join votos on votos.enlace_id = enlaces.id 
+where users.id = ? 
+group by enlaces.id
+ORDER BY created_at DESC`,
+      [id]
+    );
+    return result;
+  } finally {
+    if (connection) connection.release();
+  }
+};
 
 const createEnlace = async (userId, text, title, url, image = "") => {
   let connection;
@@ -126,4 +147,5 @@ module.exports = {
   deleteEnlaceById,
   votarEnlace,
   borrarVotoEnlace,
+  getAllEnlacesFromUserId,
 };

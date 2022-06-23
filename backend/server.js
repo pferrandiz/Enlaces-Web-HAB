@@ -10,11 +10,11 @@ const {
   getUserController,
   getMyUserController,
   loginController,
-  /*getUserEnlacesController,*/
 } = require("./controllers/users");
 
 const {
   getEnlacesController,
+  getEnlacesFromUserController,
   newEnlaceController,
   getSingleEnlaceController,
   deleteEnlaceController,
@@ -38,7 +38,7 @@ app.post("/user", newUserController);
 app.get("/user", authUser, getMyUserController);
 app.get("/user/:id", getUserController);
 app.post("/login", loginController);
-/*app.get("/user/:id/enlaces", getUserEnlacesController);*/
+app.get("/user/:id/enlaces", getEnlacesFromUserController);
 
 //Rutas de los enlaces
 

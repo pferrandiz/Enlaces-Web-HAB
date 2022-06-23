@@ -89,7 +89,7 @@ export const getUserEnlacesService = async (id) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-  return json.data;
+  return json;
 };
 
 export const loginUserService = async ({ email, password }) => {

@@ -13,12 +13,14 @@ export const UserPage = () => {
 
   return (
     <section className="pageuser">
-      <h1>Usuario {user.email}</h1>
+      <div className="user-info">
+        <h1>Usuario {user.email}</h1>
 
-      <p>User id: {user.id}</p>
-      <p>
-        Registrado desde : {new Date(user.created_at).toLocaleDateString()}{" "}
-      </p>
+        <p>User id: {user.id}</p>
+        <p>
+          Registrado desde : {new Date(user.created_at).toLocaleDateString()}{" "}
+        </p>
+      </div>
       <UserEnlaces id={user.id} />
     </section>
   );
