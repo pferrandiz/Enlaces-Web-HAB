@@ -39,10 +39,10 @@ export const NewEnlace = ({ addEnlace }) => {
   };
 
   return (
-    <section className="form-newenlace">
+    <div className="form-newenlace">
       <h1 className="h1new">Publica nuevo Enlace</h1>
       <form onSubmit={handleForm}>
-        <li className="controls2">
+        <li className="lista2">
           <label htmlFor="title">Título</label>
           <input
             type="text"
@@ -92,6 +92,6 @@ export const NewEnlace = ({ addEnlace }) => {
           {error ? <p>{error}</p> : null}
         </li>
       </form>
-    </section>
+    </div>
   );
 };
