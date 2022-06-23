@@ -30,38 +30,15 @@ const deleteEnlaceById = async (id) => {
   try {
     connection = await getConnection();
 
-    await connection.query(
-      `
-DELETE FROM enlaces WHERE id=?
-`,
-      [id]
-    );
+    await connection.query(`DELETE FROM votos WHERE enlace_id=?`, [id]);
+
+    await connection.query(`DELETE FROM enlaces WHERE id=?`, [id]);
 
     return;
   } finally {
     if (connection) connection.release();
   }
 };
-
-//todos los enlaces de un usuario
-/*const getEnalcesByUserId = async (id) => {
-  let connection;
-
-  try {
-    connection = await getConnection();
-
-    const [result] = await connection.query(
-      `
-          SELECT enlaces.*, users.email FROM enlaces LEFT JOIN users on enlaces.user_id = users.id WHERE enlaces.user_id = ?
-    `,
-      [id]
-    );
-
-    return result;
-  } finally {
-    if (connection) connection.release();
-  }
-};*/
 
 const getAllEnlaces = async () => {
   let connection;

@@ -5,7 +5,7 @@ import "./NewEnlace.css";
 
 export const NewEnlace = ({ addEnlace }) => {
   const [sending, setSending] = useState(false);
-  const { token } = useContext(AuthContext);
+  const { token, user } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -28,7 +28,7 @@ export const NewEnlace = ({ addEnlace }) => {
         image,
       });
 
-      addEnlace(enlace);
+      addEnlace({ ...enlace, name: user.name, surname: user.surname });
       e.target.reset();
       setImage(null);
     } catch (error) {

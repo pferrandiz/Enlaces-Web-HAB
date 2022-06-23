@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { deleteEnlaceService } from "../comunicaciones";
 import { AuthContext } from "../context/AuthContext";
 import { voteEnlaceService } from "../comunicaciones";
-import { deleteVotoService } from "../comunicaciones";
 import "./Enlace.css";
 
 export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
@@ -15,8 +14,6 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
 
   const deleteEnlace = async (id) => {
     try {
-      await deleteVotoService({ id, token });
-
       await deleteEnlaceService({ id, token });
       if (removeEnlace) {
         removeEnlace(id);
@@ -32,7 +29,7 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
     try {
       await voteEnlaceService({ id, token });
       setRefres(true);
-      addVoto(voto);
+      if (addVoto) addVoto(voto);
     } catch (error) {
       setError(error.message);
     }
@@ -60,7 +57,7 @@ export const Enlace = ({ enlace, removeEnlace, addVoto, voto, setRefres }) => {
           {" "}
           {enlace.name}&nbsp;{enlace.surname}
         </Link>{" "}
-        {new Date().toLocaleDateString()}
+        {new Date(enlace.created_at).toLocaleDateString()}
       </p>
       <div>
         <button id="btn" onClick={(e) => voteEnlace(e, enlace.id)}>
