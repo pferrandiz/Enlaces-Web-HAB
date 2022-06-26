@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getUserEnlacesService } from "../comunicaciones";
 
 export const UserEnlaces = ({ id }) => {
-  const { removeEnlace } = useEnlaces(id);
+  const { removeEnlace, setRefres } = useEnlaces(id);
   const [enlaces, setEnlaces] = useState();
   const [error, setError] = useState();
 
@@ -18,12 +18,19 @@ export const UserEnlaces = ({ id }) => {
       })
       .catch((err) => {
         setError(err);
+        setRefres(setRefres);
       });
   }, [id]);
 
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    enlaces && <ListEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
+    enlaces && (
+      <ListEnlaces
+        enlaces={enlaces}
+        removeEnlace={removeEnlace}
+        setRefres={setRefres}
+      />
+    )
   );
 };
